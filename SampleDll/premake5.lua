@@ -32,6 +32,9 @@ filter {"platforms:Win64", "configurations:Debug" }
     targetdir "build/Win64/Debug"
 filter {"platforms:Win64", "configurations:Release" }
     targetdir "build/Win64/Release"
+    postbuildcommands{
+        "copy Win64\\Release\\MarshalSample.dll ..\\..\\UnityMarshalSample\\Assets\\MarshalSample\\Plugins\\x86_64\\MarshalSample.dll"
+    }
 
 project "MarshalSample"
 do
@@ -56,3 +59,4 @@ do
     libdirs {}
     links {}
 end
+
